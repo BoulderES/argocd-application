@@ -12,8 +12,8 @@ spec:
     namespace: default
   project: default
   source:
-    path: charts/argo-cd
-    repoURL: https://raw.githubusercontent.com/argoproj/argo-cd/v2.2.3/manifests/ha/install.yaml
+    path: argo-cd
+    repoURL: https://github.com/BoulderES/argocd-application.git
     targetRevision: HEAD
   syncPolicy:
     automated:
