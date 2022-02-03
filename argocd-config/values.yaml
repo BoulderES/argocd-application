@@ -1,0 +1,28 @@
+---
+Applications:
+  argocd-application:
+    enabled: true
+    chart_path: argocd-app
+    repo_url: https://github.com/BoulderES/argocd-application.git
+    repo_branch: HEAD
+    namespace: argocd
+  argocd-configuration:
+    enabled: true
+    chart_path: argocd-config
+    repo_url: https://github.com/BoulderES/argocd-application.git
+    repo_branch: HEAD
+    namespace: argocd
+  sealed-secrets:
+    enabled: true
+    chart_name: sealed-secrets
+    repo_url: https://bitnami-labs.github.io/sealed-secrets
+    repo_branch: 1.16.1
+    release_name: sealed-secrets
+    namespace: kubeseal
+
+
+
+
+
+
+
