@@ -44,19 +44,19 @@ spec:
       description: Read-only privileges to {{$app}}
       policies:
         - p, proj:{{$app}}:read-only, applications, get, {{$app}}/*, allow
-      groups: {{ro_groups}}
+      groups: {{$app.ro_groups | Default []}}
 
     - name: ci-role
       description: Sync privileges for {{$app}}
       policies:
         - p, proj:{{$app}}:ci-role, applications, sync, {{$app}}/guestbook-dev, allow
-      groups: {{sync_groups}}
+      groups: {{$app.sync_groups | Default []}}
 
     - name: read-write
       description: Read and write privileges for {{$app}}
       policies:
         - p, proj:{{$app}}:write, applications, *, {{$app}}/*, allow
-      groups: {{rw_groups}}
+      groups: {{$app.rw_groups | Default []}}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
