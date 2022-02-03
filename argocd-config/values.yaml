@@ -13,7 +13,7 @@ Applications:
     repo_branch: HEAD
     namespace: argocd
   sealed-secrets:
-    enabled: false
+    enabled: true
     chart_name: sealed-secrets
     repo_url: https://bitnami-labs.github.io/sealed-secrets
     repo_branch: 1.16.1
