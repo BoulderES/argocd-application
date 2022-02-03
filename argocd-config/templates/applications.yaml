@@ -23,9 +23,7 @@ spec:
     namespace: {{$app.namespace}}
   project: default
   source:
-{{- if $app.chart_path}}
     path: {{$app.chart_path}}
-{{- end -}}
 {{- if $app.chart_name}}
     chart: {{$app.chart_name}}
 {{- end -}}
