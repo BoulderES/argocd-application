@@ -2,13 +2,13 @@
 {{- range $app := .Values.Applications }}
 {{- if $app.enabled }}
 
-#{{- if $app.namespace}}
-#---
-#apiVersion: v1
-#kind: Namespace
-#metadata:
-#  name: {{$app.namespace}}
-#{{- end -}}
+{{- if $app.namespace}}
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{$app.namespace}}
+{{- end -}}
 #---
 #apiVersion: argoproj.io/v1alpha1
 #kind: AppProject
@@ -72,12 +72,20 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: {{$app.namespace}}
-  project: {{$app}}
+  project: default
   source:
+{{- if $app.chart_path}}
     path: {{$app.chart_path}}
+{{- end -}}
+{{- if $app.chart_name}}
     chart: {{$app.chart_name}}
+{{- end -}}
+{{- if $app.repo_url}}
     repoURL: {{$app.repo_url}}
+{{- end -}}
+{{- if $app.repo_branch}}
     targetRevision: {{$app.repo_branch}}
+{{- end -}}
   syncPolicy:
     automated:
       prune: true
