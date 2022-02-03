@@ -9,57 +9,6 @@ kind: Namespace
 metadata:
   name: {{$app.namespace}}
 {{- end -}}
-#---
-#apiVersion: argoproj.io/v1alpha1
-#kind: AppProject
-#metadata:
-#  name: {{$app}}
-#  namespace: argocd
-#  finalizers:
-#    - resources-finalizer.argocd.argoproj.io
-#spec:
-#  description: Application project
-#  sourceRepos:
-#    - '*'
-#  destinations:
-#    - namespace: {{$app.namespace}}
-#      server: https://kubernetes.default.svc
-#  clusterResourceWhitelist:
-#    - group: ''
-#      kind: Namespace
-#  namespaceResourceBlacklist:
-#    - group: ''
-#      kind: ResourceQuota
-#    - group: ''
-#      kind: LimitRange
-#    - group: ''
-#      kind: NetworkPolicy
-#  namespaceResourceWhitelist:
-#    - group: 'apps'
-#      kind: Deployment
-#    - group: 'apps'
-#      kind: StatefulSet
-#  roles:
-#    - name: read-only
-#      description: Read-only privileges to {{$app}}
-#      policies:
-#        - p, proj:{{$app}}:read-only, applications, get, {{$app}}/*, allow
-#      groups:
-#        - none
-#
-#    - name: ci-role
-#      description: Sync privileges for {{$app}}
-#      policies:
-#        - p, proj:{{$app}}:ci-role, applications, sync, {{$app}}/guestbook-dev, allow
-#      groups:
-#        - none
-#
-#    - name: read-write
-#      description: Read and write privileges for {{$app}}
-#      policies:
-#        - p, proj:{{$app}}:write, applications, *, {{$app}}/*, allow
-#      groups:
-#        - none
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
