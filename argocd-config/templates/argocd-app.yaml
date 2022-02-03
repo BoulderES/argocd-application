@@ -12,7 +12,7 @@ spec:
     namespace: argocd
   project: default
   source:
-    path: argo-cd
+    path: argocd-app
     repoURL: https://github.com/BoulderES/argocd-application.git
     targetRevision: HEAD
   syncPolicy:
