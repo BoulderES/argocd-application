@@ -1,7 +1,5 @@
-
 {{- range $app := .Values.Applications }}
 {{- if $app.enabled }}
-
 {{- if $app.namespace}}
 ---
 apiVersion: v1
@@ -23,7 +21,9 @@ spec:
     namespace: {{$app.namespace}}
   project: default
   source:
+{{- if $app.chart_path}}
     path: {{$app.chart_path}}
+{{- end -}}
 {{- if $app.chart_name}}
     chart: {{$app.chart_name}}
 {{- end -}}
