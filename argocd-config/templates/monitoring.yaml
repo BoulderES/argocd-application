@@ -12,6 +12,7 @@ metadata:
 spec:
   project: default
   source:
+    path: helm
     repoURL: https://github.com/BoulderES/monitoring.git
     targetRevision: HEAD
   destination:
