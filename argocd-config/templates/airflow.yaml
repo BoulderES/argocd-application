@@ -12,8 +12,8 @@ metadata:
 spec:
   project: default
   source:
-    path: airflow
-    repoURL: https://github.com/bitnami/charts/tree/master/bitnami
+    path: charts/airflow
+    repoURL: https://github.com/airflow-helm/charts.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
