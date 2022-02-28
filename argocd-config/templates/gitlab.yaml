@@ -12,8 +12,8 @@ metadata:
 spec:
   project: default
   source:
-    path: charts/gitlab
-    repoURL: https://gitlab.com/gitlab-org/charts/gitlab.git
+    path: helm
+    repoURL: https://github.com/BoulderES/gitlab_chart.git
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
