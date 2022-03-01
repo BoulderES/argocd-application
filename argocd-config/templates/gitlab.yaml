@@ -17,6 +17,7 @@ spec:
     targetRevision: HEAD
     valueFiles:
       - values.yaml
+      - charts/webservices/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: gitlab
