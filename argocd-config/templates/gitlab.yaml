@@ -15,9 +15,10 @@ spec:
     path: gitlab
     repoURL: https://github.com/BoulderES/gitlab_chart.git
     targetRevision: HEAD
-    valueFiles:
-      - values.yaml
-      - charts/webservices/values.yaml
+    helm:
+      valueFiles:
+        - values.yaml
+        - charts/webservices/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: gitlab
