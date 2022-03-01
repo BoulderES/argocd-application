@@ -18,7 +18,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - charts/webservices/values.yaml
+        - charts/webservice/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: gitlab
