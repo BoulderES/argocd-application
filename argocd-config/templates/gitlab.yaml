@@ -12,7 +12,7 @@ metadata:
 spec:
   project: default
   source:
-    path: gitlab
+    path: helm
     repoURL: https://github.com/BoulderES/gitlab_chart.git
     targetRevision: HEAD
     helm:
