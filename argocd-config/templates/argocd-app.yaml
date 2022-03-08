@@ -15,7 +15,7 @@ spec:
     path: argocd-app
     repoURL: https://github.com/BoulderES/argocd-application.git
     targetRevision: HEAD
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  syncPolicy: {}
+    # automated:
+    #   prune: true
+    #   selfHeal: true
