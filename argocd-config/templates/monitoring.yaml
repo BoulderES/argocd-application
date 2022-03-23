@@ -14,7 +14,11 @@ spec:
   source:
     path: helm
     repoURL: https://github.com/BoulderES/monitoring.git
-    targetRevision: HEAD
+    targetRevision: main
+    helm:
+      valueFiles:
+        - values.yaml
+        - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring

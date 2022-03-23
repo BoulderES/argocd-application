@@ -14,7 +14,7 @@ spec:
   source:
     path: helm
     repoURL: https://github.com/BoulderES/jitsi.git
-    targetRevision: HEAD
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: jitsi

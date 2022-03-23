@@ -2,18 +2,18 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: postgres
+  name: redis
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: postgres
+  name: redis
   namespace: argocd
 spec:
   project: default
   source:
     path: helm
-    repoURL: https://github.com/BoulderES/postgres.git
+    repoURL: https://github.com/BoulderES/redis.git
     targetRevision: main
     helm:
       valueFiles:
@@ -21,4 +21,4 @@ spec:
         - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: postgres
+    namespace: redis
