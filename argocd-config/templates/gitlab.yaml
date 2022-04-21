@@ -12,7 +12,9 @@ metadata:
 spec:
   project: default
   source:
-    path: helm
+    path:
+    - helm
+    - ingress-nginx
     repoURL: https://github.com/BoulderES/gitlab_chart.git
     targetRevision: HEAD
     helm:
