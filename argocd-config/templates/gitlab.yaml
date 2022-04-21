@@ -24,22 +24,3 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: gitlab
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: gitlab-ingress-nginx
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: ingress-nginx
-    repoURL: https://github.com/BoulderES/gitlab_chart.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: gitlab
