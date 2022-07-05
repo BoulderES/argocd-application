@@ -12,7 +12,7 @@ metadata:
 spec:
   project: default
   source:
-    path: skywalker-poc
+    path: skywalking-poc
     repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
