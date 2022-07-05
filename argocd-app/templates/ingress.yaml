@@ -9,17 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
   rules:
-  - host: argocd-lab.dev
-    http:
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-          backend:
-            service:
-              name: argocd-server
-              port:
-                number: 443
-  - host: argocd.lab.myddns.me
+  - host: argocd-lab.unicc.org
     http:
       paths:
         - path: /
