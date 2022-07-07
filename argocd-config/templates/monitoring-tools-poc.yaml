@@ -30,8 +30,8 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    path: elk-poc
+  sources:
+    path: elk-poc/apm-server
     repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
