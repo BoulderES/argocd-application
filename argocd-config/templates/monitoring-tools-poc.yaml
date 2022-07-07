@@ -64,12 +64,12 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: prometherus-stack-poc
+  name: grafana-stack-poc
   namespace: argocd
 spec:
   project: default
   source:
-    path: prometherus-stack-poc
+    path: grafana-stack-poc
     repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
