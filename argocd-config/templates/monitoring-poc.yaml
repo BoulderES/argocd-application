@@ -7,7 +7,7 @@ metadata:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: skywalking-poc
+  name: skywalking-poc-alt
   namespace: argocd
 spec:
   project: default
@@ -26,7 +26,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: elk-eck
+  name: elk-eck-alt
   namespace: argocd
 spec:
   project: default
@@ -45,7 +45,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: elk-poc
+  name: elk-poc-alt
   namespace: argocd
 spec:
   project: default
@@ -64,7 +64,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grafana-stack-poc
+  name: grafana-stack-poc-alt
   namespace: argocd
 spec:
   project: default
