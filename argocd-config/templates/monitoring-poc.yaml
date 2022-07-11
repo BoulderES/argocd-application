@@ -1,81 +1,81 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: monitoring-poc
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: skywalking-poc-alt
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: skywalking-poc
-    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: monitoring-poc
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: elk-eck-alt
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: elk-eck
-    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: monitoring-poc
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: elk-poc-alt
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: elk-poc
-    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: monitoring-poc
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: grafana-stack-poc-alt
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: grafana-stack-poc
-    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: monitoring-poc
+#---
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: monitoring-poc
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: skywalking-poc-alt
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    path: skywalking-poc
+#    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
+#    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#        - values.yaml
+#        - values-lab.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: monitoring-poc
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: elk-eck-alt
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    path: elk-eck
+#    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
+#    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#        - values.yaml
+#        - values-lab.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: monitoring-poc
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: elk-poc-alt
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    path: elk-poc
+#    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
+#    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#        - values.yaml
+#        - values-lab.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: monitoring-poc
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: grafana-stack-poc-alt
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    path: grafana-stack-poc
+#    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
+#    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#        - values.yaml
+#        - values-lab.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: monitoring-poc
