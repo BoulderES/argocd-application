@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: monitoring-tools-poc
+  name: monitoring-poc
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -21,7 +21,7 @@ spec:
         - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring-tools-poc
+    namespace: monitoring-poc
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -32,7 +32,7 @@ spec:
   project: default
   source:
     path: elk-eck
-    repoURL: https://bitbucket.org/iccgit/cps-monitoring-poc.git
+    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
       valueFiles:
@@ -40,7 +40,7 @@ spec:
         - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring-tools-poc
+    namespace: monitoring-poc
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -51,7 +51,7 @@ spec:
   project: default
   source:
     path: elk-poc
-    repoURL: https://bitbucket.org/iccgit/cps-monitoring-poc.git
+    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
       valueFiles:
@@ -59,7 +59,7 @@ spec:
         - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring-tools-poc
+    namespace: monitoring-poc
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -70,7 +70,7 @@ spec:
   project: default
   source:
     path: grafana-stack-poc
-    repoURL: https://bitbucket.org/iccgit/cps-monitoring-poc.git
+    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
     targetRevision: HEAD
     helm:
       valueFiles:
@@ -78,4 +78,4 @@ spec:
         - values-lab.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: monitoring-tools-poc
+    namespace: monitoring-poc
