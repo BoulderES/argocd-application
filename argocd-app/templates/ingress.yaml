@@ -9,7 +9,7 @@ metadata:
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
 spec:
   rules:
-  - host: argocd-lab.unicc.org
+  - host: argocd.rancher-poc.unicc.org
     http:
       paths:
         - path: /
