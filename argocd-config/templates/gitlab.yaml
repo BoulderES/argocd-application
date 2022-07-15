@@ -1,57 +1,18 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: gitlab
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: gitlab
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: helm
-    repoURL: https://github.com/BoulderES/gitlab_chart.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: gitlab
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: gitlab-custom
-  namespace: argocd
-spec:
-  project: default
-  source:
-    path: sync-gitlab-cronjob
-    repoURL: https://github.com/BoulderES/gitlab_chart.git
-    targetRevision: HEAD
-    helm:
-      valueFiles:
-        - values.yaml
-        - values-lab.yaml
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: gitlab
-
+#---
+#apiVersion: v1
+#kind: Namespace
+#metadata:
+#  name: gitlab
 #---
 #apiVersion: argoproj.io/v1alpha1
 #kind: Application
 #metadata:
-#  name: gitlab-ingress-nginx
+#  name: gitlab
 #  namespace: argocd
 #spec:
 #  project: default
 #  source:
-#    path: ingress-nginx
+#    path: helm
 #    repoURL: https://github.com/BoulderES/gitlab_chart.git
 #    targetRevision: HEAD
 #    helm:
@@ -61,3 +22,42 @@ spec:
 #  destination:
 #    server: https://kubernetes.default.svc
 #    namespace: gitlab
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: gitlab-custom
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    path: sync-gitlab-cronjob
+#    repoURL: https://github.com/BoulderES/gitlab_chart.git
+#    targetRevision: HEAD
+#    helm:
+#      valueFiles:
+#        - values.yaml
+#        - values-lab.yaml
+#  destination:
+#    server: https://kubernetes.default.svc
+#    namespace: gitlab
+#
+##---
+##apiVersion: argoproj.io/v1alpha1
+##kind: Application
+##metadata:
+##  name: gitlab-ingress-nginx
+##  namespace: argocd
+##spec:
+##  project: default
+##  source:
+##    path: ingress-nginx
+##    repoURL: https://github.com/BoulderES/gitlab_chart.git
+##    targetRevision: HEAD
+##    helm:
+##      valueFiles:
+##        - values.yaml
+##        - values-lab.yaml
+##  destination:
+##    server: https://kubernetes.default.svc
+##    namespace: gitlab
