@@ -13,7 +13,7 @@ spec:
   project: default
   source:
     path: skywalking-poc
-    repoURL: https://bitbucket.org/boulder802/repo_to-import.git
+    repoURL: https://bitbucket.org/iccgit/cps-monitoring-poc.git
     targetRevision: HEAD
     helm:
       valueFiles:
