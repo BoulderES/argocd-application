@@ -70,7 +70,7 @@ spec:
   project: default
   source:
     path: grafana-stack-poc
-    repoURL: https://github.com/BoulderES/monitoring-tools-poc.git
+    repoURL: https://bitbucket.org/iccgit/cps-monitoring-poc.git
     targetRevision: HEAD
     helm:
       valueFiles:
